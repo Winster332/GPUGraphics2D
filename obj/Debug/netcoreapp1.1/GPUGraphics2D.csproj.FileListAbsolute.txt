@@ -1,0 +1,8 @@
+/home/stas/git/GPUGraphics2D/bin/Debug/netcoreapp1.1/GPUGraphics2D.deps.json
+/home/stas/git/GPUGraphics2D/bin/Debug/netcoreapp1.1/GPUGraphics2D.runtimeconfig.json
+/home/stas/git/GPUGraphics2D/bin/Debug/netcoreapp1.1/GPUGraphics2D.runtimeconfig.dev.json
+/home/stas/git/GPUGraphics2D/bin/Debug/netcoreapp1.1/GPUGraphics2D.dll
+/home/stas/git/GPUGraphics2D/bin/Debug/netcoreapp1.1/GPUGraphics2D.pdb
+/home/stas/git/GPUGraphics2D/obj/Debug/netcoreapp1.1/GPUGraphics2D.AssemblyInfo.cs
+/home/stas/git/GPUGraphics2D/obj/Debug/netcoreapp1.1/GPUGraphics2D.dll
+/home/stas/git/GPUGraphics2D/obj/Debug/netcoreapp1.1/GPUGraphics2D.pdb
