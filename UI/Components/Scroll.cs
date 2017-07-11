@@ -24,12 +24,12 @@ namespace GPUGraphics2D.UI.Components
             float mdy = 0;
             Button.ListenerMouse.AddDown(m => {
                 isDown = true;
-                mdy = m.Y - m.UI.Y;
+                mdy = m.Y - Button.Y;
             });
             Button.ListenerMouse.AddMove(m => {
                 if (isDown)
                 {
-                    var mvy = m.Y - m.UI.Parent.Y - mdy;
+                    var mvy = m.Y - this.Y - mdy;
 
                     if (mvy >= 0 && mvy <= Button.Hieght)
                     {
