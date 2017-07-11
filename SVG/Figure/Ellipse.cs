@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace GPUGraphics2D.SvgReader
 {
@@ -19,6 +20,11 @@ namespace GPUGraphics2D.SvgReader
             cy = Int32.Parse(xElement.Attribute("cy").Value);
             rx = Int32.Parse(xElement.Attribute("rx").Value);
             ry = Int32.Parse(xElement.Attribute("ry").Value);
+        }
+
+        public new void Draw(Graphics2D g)
+        {
+            g.Graphics.DrawEllipse(new Pen(Color.Black), cx, cy, cx+rx, cy+ry);
         }
 
         public override string ToString()

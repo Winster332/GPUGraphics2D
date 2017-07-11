@@ -10,7 +10,7 @@ namespace GPUGraphics2D.SvgReader
     {
         public string LayerId { get; set; }
 
-        public virtual void Draw()
+        public virtual void Draw(Graphics2D g)
         {
             Console.WriteLine(this);
         }

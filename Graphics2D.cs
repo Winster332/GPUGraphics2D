@@ -70,6 +70,8 @@ namespace GPUGraphics2D {
         public void BeginRender()
         {
             this.Graphics = sGraphics.FromImage(Image);
+            this.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.Graphics.Clear(System.Drawing.Color.Transparent);
         }
         public void EndRender() 
         {

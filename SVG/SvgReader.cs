@@ -10,9 +10,9 @@ namespace GPUGraphics2D.SvgReader
     public class SvgReader
     {
         private static List<IDraw> graphs = new List<IDraw>();
-
-        public static void LoadGraphElements(string svgFileName)
+        public static List<IDraw> LoadGraphElements(string svgFileName)
         {
+            graphs.Clear();
             XDocument svgDoc = XDocument.Load(svgFileName);
             XNamespace rootNamespace = svgDoc.Root.Name.NamespaceName;
             Console.WriteLine(rootNamespace + "g");   
@@ -32,6 +32,8 @@ namespace GPUGraphics2D.SvgReader
             {
                 Console.WriteLine(item);
             }
+
+            return graphs;
         }
 
         public static void GenerateCodeFile()
