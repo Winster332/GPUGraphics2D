@@ -31,6 +31,16 @@ namespace GPUGraphics2D.UI
             g2d.Graphics.FillRectangle(ui.Background, ui.X, ui.Y, ui.Width, ui.Hieght);
         }
 
+        void UIRenderer.ListBox(ListBox ui)
+        {
+            g2d.Graphics.FillRectangle(new SolidBrush(Color.Gray), ui.X, ui.Y, ui.Width, ui.Hieght);
+        }
+
+        void UIRenderer.RectangleComponent(RectangleComponent ui)
+        {
+            g2d.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(192, 192, 192)), ui.X, ui.Y, ui.Width, ui.Hieght);
+        }
+
         void UIRenderer.Scroll(Scroll ui)
         {
             g2d.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(192, 192, 192)), ui.X, ui.Y, ui.Width, ui.Hieght);

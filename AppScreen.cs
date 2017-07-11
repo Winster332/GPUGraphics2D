@@ -23,9 +23,11 @@ namespace GPUGraphics2D
             });
             AddComponent(l1);
             Window win = new Window(400, 400, 500, 500, "My Window");
-            var scroll = new Scroll(10, 150, 20, 100);
-            scroll.ChangeScroll+=(o, e)=>{ win.Title.Value = scroll.Value.ToString(); };
-            win.AddComponent(scroll);
+            // var scroll = new Scroll(10, 150, 100);
+            var lsb = new ListBox(200, 200, 200, 200);
+            // scroll.ChangeScroll+=(o, e)=>{ win.Title.Value = scroll.Value.ToString(); };
+            win.AddComponent(lsb);
+            lsb.AddItem(new ButtonRect(0, 0, 20, 40, new Font("Arial", 12), "Sta",Color.Blue));
             this.AddComponent(win);
         }
 

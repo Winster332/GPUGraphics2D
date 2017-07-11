@@ -12,13 +12,12 @@ namespace GPUGraphics2D.UI.Components
         public override void Dispose()
         {
         }
-        public Scroll(float x, float y, float w, float h)
+        public Scroll(float x, float y, float h)
         {
             this.Width = 10;
             this.Hieght = h;
             this.X = x;
             this.Y = y;
-            this.Hieght = h;
             this.Button = new ButtonRect(1, 1, 8, h / 2, new Font("", 12), "", Color.Green);
             bool isDown = false;
             float mdy = 0;
@@ -35,7 +34,8 @@ namespace GPUGraphics2D.UI.Components
                     {
                         Button.Y = mvy;
                         Value = mvy;// * (this.Hieght / CountElements);
-                        ChangeScroll(this, null);
+                        if (ChangeScroll != null)
+                            ChangeScroll(this, null);
                     }
                 }
             });
