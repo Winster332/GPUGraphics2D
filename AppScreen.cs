@@ -22,10 +22,19 @@ namespace GPUGraphics2D
                 Console.WriteLine(m.UI);
             });
             AddComponent(l1);
+
+            LayoutGrid grid = new LayoutGrid(400, 100, 400, 400, Color.FromArgb(0, 0, 0));
+            grid.InitGrid(2, 2);
+            grid.AddComponent(0, 0, new AbsoluteLayout(0, 0, 10, 10, Color.Green));
+            grid.AddComponent(1, 0, new AbsoluteLayout(0, 0, 10, 10, Color.Red));
+            grid.AddComponent(0, 1, new AbsoluteLayout(0, 0, 10, 10, Color.Blue));
+            grid.AddComponent(1, 1, new AbsoluteLayout(0, 0, 10, 10, Color.Gray));
+            this.AddComponent(grid);
+            
             Window win = new Window(400, 400, 500, 500, "My Window");
-            // var scroll = new Scroll(10, 150, 100);
+            var scroll = new Scroll(10, 150, 100);
             var lsb = new ListBox(200, 200, 200, 200);
-            // scroll.ChangeScroll+=(o, e)=>{ win.Title.Value = scroll.Value.ToString(); };
+            scroll.ChangeScroll+=(o, e)=>{ win.Title.Value = scroll.Value.ToString(); };
             win.AddComponent(lsb);
             lsb.AddItem(new ButtonRect(0, 0, 20, 40, new Font("Arial", 12), "Sta",Color.Blue));
             this.AddComponent(win);
