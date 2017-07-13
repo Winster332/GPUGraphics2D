@@ -78,17 +78,18 @@ namespace GPUGraphics2D.UI.Events.Mouse
                     });
                     if (!isChildCollision)
                     {
-                        if (IsMouseOver) {
+                        if (ui.ListenerMouse.IsMouseOver) {
                             ui.ListenerMouse.ActiveEnter(x, y, ui);
-                            IsMouseOver = false;
-                        }                        ui.ListenerMouse.ActiveMove(x, y, ui);
+                            ui.ListenerMouse.IsMouseOver = false;
+                        }  
+                        ui.ListenerMouse.ActiveMove(x, y, ui);
                     } 
                 
-                    } else if (!IsMouseOver)
-                    {
-                        IsMouseOver = true;
-                        ui.ListenerMouse.ActiveLeave(x, y, ui);
-                    }
+                } else if (!ui.ListenerMouse.IsMouseOver)
+                {
+                    ui.ListenerMouse.IsMouseOver = true;
+                    ui.ListenerMouse.ActiveLeave(x, y, ui);
+                }
                 return isCollision;
             } else return false;
         }

@@ -8,6 +8,7 @@ namespace GPUGraphics2D.UI.Components
         public void AddComponent(RectangleComponent component)
         {
             component.Parent = this;
+            component.X = ContentValue;
             this.Childs.Add(component);
 
             ContentValue += component.Width;

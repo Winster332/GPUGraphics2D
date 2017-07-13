@@ -20,8 +20,8 @@ namespace GPUGraphics2D.UI.Components
             this.Radius = rad;
             this.Background = new SolidBrush(color);
             
-            var baseColor = color;
-            this.ListenerMouse.AddEnter(m => Color = Color.FromArgb(100, 100, 100));
+            var baseColor = Color.FromArgb(color.A, color.R, color.G, color.B);
+            this.ListenerMouse.AddEnter(m => Color = Color.FromArgb(color.R / 2, color.G / 2, color.B / 2));
             this.ListenerMouse.AddLeave(m => Color = color);
         }
         public override void Dispose()

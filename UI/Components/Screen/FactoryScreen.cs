@@ -1,14 +1,17 @@
 using GPUGraphics2D.UI.Components.Screen;
+using System.Collections.Generic;
 
 namespace GPUGraphics2D.UI.Components.Screen
 {
     public class FactoryScreen
     {
+        public List<BaseScreen> PoolScreens { get; set; }
         public BaseScreen CurrentScreen { get; set; }
         private Application app;
         public FactoryScreen(Application app)
         {   
             this.app = app;
+            this.PoolScreens = new List<BaseScreen>();
             CurrentScreen = null;
 
             this.app.MouseDown += (o, e) => CurrentScreen?.ListenerMouse.OnMouseDown(CurrentScreen, e.X, e.Y);
@@ -22,6 +25,12 @@ namespace GPUGraphics2D.UI.Components.Screen
         public void Dispose()
         {
             CurrentScreen?.Dispose();
+        }
+        public void Select(int index)
+        {
+            CurrentScreen.Paused();
+            CurrentScreen = PoolScreens[index];
+            CurrentScreen.Resume();
         }
         public void SetScteen(BaseScreen scrren)
         {

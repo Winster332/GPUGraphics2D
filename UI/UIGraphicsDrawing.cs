@@ -38,7 +38,7 @@ namespace GPUGraphics2D.UI
 
         void UIRenderer.RectangleComponent(RectangleComponent ui)
         {
-            g2d.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(192, 192, 192)), ui.X, ui.Y, ui.Width, ui.Hieght);
+            g2d.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(92, 192, 192)), ui.X, ui.Y, ui.Width, ui.Hieght);
         }
 
         void UIRenderer.Scroll(Scroll ui)

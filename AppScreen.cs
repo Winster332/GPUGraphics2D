@@ -38,6 +38,14 @@ namespace GPUGraphics2D
             win.AddComponent(lsb);
             lsb.AddItem(new ButtonRect(0, 0, 20, 40, new Font("Arial", 12), "Sta",Color.Blue));
             this.AddComponent(win);
+
+            var tabs = new TabLayout<TextBlock>(100, 100, 400, 30, Color.Silver);
+            this.AddComponent(tabs);
+            for (int i = 0; i < 3; i++)
+                tabs.AddTab($"File {i}.cs", new TextBlock(10, 10, "1", "Arial", 14, 
+                StringAlignment.Center, Color.Red)).Active = (name, ui) => {
+                    Console.WriteLine("name: " + name);
+                };
         }
 
         public override void Paused()
